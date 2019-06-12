@@ -8,11 +8,13 @@ class global_var:
 	request_way = '4'
 	header = '5'
 	case_depend = '6'
-	data_depend = '7'
-	field_depend = '8'
-	data = '9'
-	expect = '10'
-	result = '11'
+	data_hierarchy='7'
+	depend_respond_data_key = '8'
+	depend_respond_data='9'
+	depend_data_key = '10'
+	data = '11'
+	expect = '12'
+	result = '13'
 #获取caseid
 def get_id():
 	'''获取caseid'''
@@ -39,13 +41,25 @@ def get_case_depend():
 	'''case依赖'''
 	return global_var.case_depend
 
-def get_data_depend():
-	'''依赖的返回数据'''
-	return global_var.data_depend
+def get_data_hierarchy():
+	'''返回的依赖数据层级'''
+	return global_var.data_hierarchy
 
-def get_field_depend():
+def depend_respond_data_key():
+	'''依赖返回数据的key. 如order = {"code":200,data":{"key":...}}'''
+	return global_var.depend_respond_data_key
+
+def depend_respond_data():
+	'''依赖的返回数据'''
+	return global_var.depend_respond_data
+
+def get_depend_data_key():
 	'''数据依赖字段'''
-	return global_var.field_depend
+	return global_var.depend_data_key
+
+
+
+
 
 def get_data():
 	'''请求数据'''

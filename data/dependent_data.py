@@ -1,7 +1,7 @@
 #coding:utf-8
 import sys
 import json
-sys.path.append('E:/www/ImoocInterface/')
+sys.path.append(r'C:\Users\Administrator\PycharmProjects\api-test')
 from util.operation_excel import OperationExcel
 from base.runmethod import RunMethod
 from data.get_data import GetData
@@ -12,59 +12,69 @@ class DependdentData:
 		self.opera_excel = OperationExcel()
 		self.data = GetData()
 
-	#通过case_id去获取该case_id的整行数据
 	def get_case_line_data(self):
 		'''通过case_id去获取该case_id的整行数据'''
 		rows_data = self.opera_excel.get_rows_data(self.case_id)
 		return rows_data
 
-	#执行依赖测试，获取结果
 	def run_dependent(self):
-		'''执行依赖测试，获取结果'''
+		'''执行依赖case测试，获取结果'''
 		run_method = RunMethod()
 		row_num  = self.opera_excel.get_row_num(self.case_id)
 		request_data = self.data.get_data_for_json(row_num)
+		request_data['userId'] = "976022"
+		request_data["timestamp"] = self.data.get_timestamp()
+		request_data["debug"]="true"
 		#header = self.data.is_header(row_num)
 		method = self.data.get_request_method(row_num)
 		url = self.data.get_request_url(row_num)
 		res = run_method.run_main(method,url,request_data)
 		return json.loads(res)
 
-	#根据依赖的key去获取执行依赖测试case的响应,然后返回
+
 	def get_data_for_key(self,row):
 		'''根据依赖的key去获取执行依赖测试case的响应,然后返回'''
-		depend_data = self.data.get_depend_key(row)
+		depend_respond_data_key = self.data.get_depend_respond_data_key(row)
+		depend_respond_data=self.data.get_depend_respond_data(row)
+		data_hierarchy=self.data.get_data_hierarchy(row)
 		response_data = self.run_dependent()
-		json_exe = parse(depend_data)
-		madle = json_exe.find(response_data)
-		return [math.value for math in madle][0]
+		if data_hierarchy=="":
+			data_list=response_data["data"][depend_respond_data_key]
+			for data in data_list:
+				return (data[depend_respond_data])
+
+		elif data_hierarchy == 1:
+			data1=response_data[depend_respond_data]
+			return data1
+
+		elif data_hierarchy == 2:
+			data_list=response_data[depend_respond_data_key]
+			for data2 in data_list:
+				return (data2[depend_respond_data])
+
+		'''else:
+				data = response_data["data"][depend_respond_data]
+				return (data)'''
+		#json_exe = parse(depend_data)
+		#madle = json_exe.find(data)
+		#return [math.value for math in madle][0]
 
 if __name__ == '__main__':
-	order = {
-		"data": {
-			"_input_charset": "utf-8", 
-			"body": "慕课网订单-1710141907182334", 
-			"it_b_pay": "1d", 
-			"notify_url": "http://order.imooc.com/pay/notifyalipay", 
-			"out_trade_no": "1710141907182334", 
-			"partner": "2088002966755334", 
-			"payment_type": "1", 
-			"seller_id": "yangyan01@tcl.com", 
-			"service": "mobile.securitypay.pay", 
-			"sign": "kZBV53KuiUf5HIrVLBCcBpWDg%2FnzO%2BtyEnBqgVYwwBtDU66Xk8VQUTbVOqDjrNymCupkVhlI%2BkFZq1jOr8C554KsZ7Gk7orC9dDbQlpr%2BaMmdjO30JBgjqjj4mmM%2Flphy9Xwr0Xrv46uSkDKdlQqLDdGAOP7YwOM2dSLyUQX%2Bo4%3D", 
-			"sign_type": "RSA", 
-			"string": "_input_charset=utf-8&body=慕课网订单-1710141907182334&it_b_pay=1d&notify_url=http://order.imooc.com/pay/notifyalipay&out_trade_no=1710141907182334&partner=2088002966755334&payment_type=1&seller_id=yangyan01@tcl.com&service=mobile.securitypay.pay&subject=慕课网订单-1710141907182334&total_fee=299&sign=kZBV53KuiUf5HIrVLBCcBpWDg%2FnzO%2BtyEnBqgVYwwBtDU66Xk8VQUTbVOqDjrNymCupkVhlI%2BkFZq1jOr8C554KsZ7Gk7orC9dDbQlpr%2BaMmdjO30JBgjqjj4mmM%2Flphy9Xwr0Xrv46uSkDKdlQqLDdGAOP7YwOM2dSLyUQX%2Bo4%3D&sign_type=RSA", 
-			"subject": "慕课网订单-1710141907182334", 
-			"total_fee": 299
-			}, 
-			"errorCode": 1000, 
-			"errorDesc": "成功", 
-			"status": 1, 
-			"timestamp": 1507979239100
-		}
-	res = "data.out_trade_no"
-	json_exe = parse(res)
-	madle = json_exe.find(order)
-	print ([math.value for math in madle][0])
-
-
+	order = {"code":200,
+		 "data":
+			 {"drawList":
+				  [{"addTime":1559289436000,"agentCode":"","amount":2.0,"id":69552}]},"message":"成功","version":"8.8.3"}
+	data1={"code":200,"data":[{"addTime":1560325986000,"agentCode":"","code":"None","id":22546}]}
+	data2=(data1["data"])
+	data=order["data"]["drawList"]
+	print(data)
+	for item in data:
+		print(item["id"])
+	for a in data2:
+		print(a["code"])
+#index = data.index('id') if ('id' in data) else -1
+#print(index)
+#res = "id"
+#json_exe = parse(res)
+#madle = json_exe.find(data)
+#print ([math.value for math in madle][0])

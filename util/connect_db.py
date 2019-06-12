@@ -44,5 +44,5 @@ class OperationMysql:
 
 if __name__ == '__main__':
 	op_mysql = OperationMysql()
-	res = op_mysql.select(value='id = "921954"')
+	res = op_mysql.select(value='id = "921972"')
 	print (res)

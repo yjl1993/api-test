@@ -11,17 +11,18 @@ class OperetionJson:
 
 	#读取json文件
 	def read_data(self):
+		'''	读取json文件'''
 		with open(self.file_path) as fp:
 			data = json.load(fp)
 			return data
 
-	#根据关键字获取数据
 	def get_data(self,id):
-		print (type(self.data))
+		'''根据关键字获取数据'''
 		return self.data[id]
 
 	#写json
 	def write_data(self,data):
+		'''写json'''
 		with open('../dataconfig/cookie.json','w') as fp:
 			fp.write(json.dumps(data))
 
@@ -29,4 +30,4 @@ class OperetionJson:
 
 if __name__ == '__main__':
 	opjson = OperetionJson()
-	print (opjson.get_data('shop'))
+	print (opjson.get_data('shijianchuo'))
