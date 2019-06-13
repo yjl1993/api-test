@@ -12,6 +12,7 @@ class global_var:
 	depend_respond_data_key = '8'
 	depend_respond_data='9'
 	depend_data_key = '10'
+	#parameter='11'
 	data = '11'
 	expect = '12'
 	result = '13'
@@ -57,9 +58,9 @@ def get_depend_data_key():
 	'''数据依赖字段'''
 	return global_var.depend_data_key
 
-
-
-
+def get_parameter():
+	'''特殊参数'''
+	return global_var.parameter
 
 def get_data():
 	'''请求数据'''

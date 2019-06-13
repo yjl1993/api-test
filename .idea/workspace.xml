@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af3a738-90c5-4514-b303-7c660adffa67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataconfig/case.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/262a4780-2545-4b8b-b74e-9ec8049df02e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/262a4780-2545-4b8b-b74e-9ec8049df02e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/runmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/runmethod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/test_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/test_method.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/data_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dependent_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dependent_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case1.xls" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case1.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/user.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/run_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/run_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/connect_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/connect_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operation_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operation_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operation_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operation_json.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/data_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-600">
-              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="100">
+              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -101,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+            <state relative-caret-position="334">
+              <caret line="139" column="68" lean-forward="true" selection-start-line="139" selection-start-column="68" selection-end-line="139" selection-end-column="68" />
               <folding>
                 <element signature="e#14#61#0" expanded="true" />
               </folding>
@@ -113,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/dependent_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="84">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#14#24#0" expanded="true" />
               </folding>
@@ -125,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/run_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+            <state relative-caret-position="436">
+              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -134,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dataconfig/user.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+            <state relative-caret-position="475">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -161,13 +151,14 @@
       <find>cid</find>
       <find>趣味</find>
       <find>null</find>
-      <find>=</find>
       <find>&amp;</find>
+      <find>=</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>:</replace>
       <replace>,</replace>
+      <replace>&quot;:&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,8 +178,8 @@
         <option value="$PROJECT_DIR$/base/runmethod.py" />
         <option value="$PROJECT_DIR$/util/operation_json.py" />
         <option value="$PROJECT_DIR$/data/data_config.py" />
-        <option value="$PROJECT_DIR$/main/run_test.py" />
         <option value="$PROJECT_DIR$/data/get_data.py" />
+        <option value="$PROJECT_DIR$/main/run_test.py" />
         <option value="$PROJECT_DIR$/data/dependent_data.py" />
         <option value="$PROJECT_DIR$/dataconfig/user.json" />
       </list>
@@ -196,7 +187,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="216" />
-    <option name="y" value="4" />
+    <option name="y" value="2" />
     <option name="width" value="1693" />
     <option name="height" value="1040" />
   </component>
@@ -289,28 +280,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.run_test">
-    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="p22naf" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/base" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/base/demo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="dependent_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="p22naf" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -325,6 +294,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/dependent_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="p22naf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/get_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -424,18 +415,18 @@
     <list>
       <item itemvalue="Python.test_method.py" />
       <item itemvalue="Python.run_test" />
-      <item itemvalue="Python.demo" />
       <item itemvalue="Python.operation_json" />
       <item itemvalue="Python.runmethod" />
       <item itemvalue="Python.dependent_data" />
+      <item itemvalue="Python.get_data" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_test" />
         <item itemvalue="Python.dependent_data" />
+        <item itemvalue="Python.get_data" />
         <item itemvalue="Python.runmethod" />
         <item itemvalue="Python.operation_json" />
-        <item itemvalue="Python.demo" />
       </list>
     </recent_temporary>
   </component>
@@ -466,7 +457,8 @@
       <workItem from="1559616639491" duration="25845000" />
       <workItem from="1559700943849" duration="6346000" />
       <workItem from="1560302381881" duration="16134000" />
-      <workItem from="1560320435481" duration="10793000" />
+      <workItem from="1560320435481" duration="12799000" />
+      <workItem from="1560388645951" duration="27359000" />
     </task>
     <task id="LOCAL-00001" summary="第一次上传api">
       <created>1559096553085</created>
@@ -475,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559096553085</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新代码，修改了很多东西，赖得写了">
+      <created>1560332091728</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560332091728</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -484,7 +483,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176822000" />
+    <option name="totallyTimeSpent" value="206187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,15 +495,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="216" y="4" width="1693" height="1040" extended-state="0" />
+    <frame x="320" y="0" width="1693" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1402327" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14206982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296582" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964914" visible="true" weight="0.32855567" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964914" visible="true" weight="0.32855567" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39911798" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,7 +528,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次上传" />
     <MESSAGE value="第一次上传api" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次上传api" />
+    <MESSAGE value="更新代码，修改了很多东西，赖得写了" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新代码，修改了很多东西，赖得写了" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api_test$demo.coverage" NAME="demo Coverage Results" MODIFIED="1559270913082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
@@ -537,11 +537,11 @@
     <SUITE FILE_PATH="coverage/api_test$Unittests_in_test_method_py.coverage" NAME="Unittests in test_method.py Coverage Results" MODIFIED="1558755003153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
     <SUITE FILE_PATH="coverage/api_test$operation_json.coverage" NAME="operation_json Coverage Results" MODIFIED="1559527246252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/api_test$rebuild_jsom.coverage" NAME="rebuild_jsom Coverage Results" MODIFIED="1558957559350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/api_test$run_test.coverage" NAME="run_test Coverage Results" MODIFIED="1560331837442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/api_test$run_test.coverage" NAME="run_test Coverage Results" MODIFIED="1560417070124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/api_test$operation_header.coverage" NAME="operation_header Coverage Results" MODIFIED="1559044204492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
-    <SUITE FILE_PATH="coverage/api_test$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1559121312824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/api_test$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1560408658785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/api_test$test_method_py.coverage" NAME="test_method.py Coverage Results" MODIFIED="1559524636765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/api_test$dependent_data.coverage" NAME="dependent_data Coverage Results" MODIFIED="1560330322904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/api_test$dependent_data.coverage" NAME="dependent_data Coverage Results" MODIFIED="1560415941057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/api_test$connect_db.coverage" NAME="connect_db Coverage Results" MODIFIED="1559269958087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/api_test$operation_excel.coverage" NAME="operation_excel Coverage Results" MODIFIED="1558754918788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
   </component>
@@ -857,42 +857,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/data_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/dependent_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="54" column="16" lean-forward="true" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-          <folding>
-            <element signature="e#14#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/run_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+        <state relative-caret-position="100">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        <state relative-caret-position="334">
+          <caret line="139" column="68" lean-forward="true" selection-start-line="139" selection-start-column="68" selection-end-line="139" selection-end-column="68" />
           <folding>
             <element signature="e#14#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/run_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dependent_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#14#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dataconfig/user.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+        <state relative-caret-position="475">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
         </state>
       </provider>
     </entry>

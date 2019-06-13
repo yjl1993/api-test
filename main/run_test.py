@@ -39,6 +39,8 @@ class RunTest:
                 request_data['userId']="976022"
                 request_data["timestamp"]=self.data.get_timestamp()
                 request_data["debug"]="true"
+                request_data["startTime"]="2017-01-01"
+                request_data["endTime"]=self.data.get_time()
                 # expect = self.data.get_expcet_data_for_mysql(i)
                 expect = self.data.get_expcet_data(i)
                 header = self.data.is_header(i)

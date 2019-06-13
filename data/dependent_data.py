@@ -38,19 +38,35 @@ class DependdentData:
 		depend_respond_data=self.data.get_depend_respond_data(row)
 		data_hierarchy=self.data.get_data_hierarchy(row)
 		response_data = self.run_dependent()
-		if data_hierarchy=="":
+		if data_hierarchy=="":#{"code":200,"data":{"drawList":[{"id":69552}]}}
 			data_list=response_data["data"][depend_respond_data_key]
 			for data in data_list:
 				return (data[depend_respond_data])
 
-		elif data_hierarchy == 1:
+		elif data_hierarchy == 1:#{"data":"289470"}
 			data1=response_data[depend_respond_data]
 			return data1
 
-		elif data_hierarchy == 2:
+		elif data_hierarchy == 2:#{"code":200,"data":[{"code":"960200"}]}
 			data_list=response_data[depend_respond_data_key]
 			for data2 in data_list:
 				return (data2[depend_respond_data])
+
+		elif data_hierarchy == 3:#适用该数据结构{"code":200,"data":{"activeId":"61"}}
+			data_list=response_data[depend_respond_data_key]
+			data2=data_list[depend_respond_data]
+			return data2
+
+		elif data_hierarchy == 4:#{"code":200,"data":[{"id":7728,"lottery":{"id":"30","a":"1"}}]}
+			data_list = response_data["data"]
+			for data4 in data_list:
+				return (data4[depend_respond_data_key][depend_respond_data])
+
+		elif data_hierarchy == 5:#{"code":200,"data":{"feedback":{"id":700}}}
+			data_list = response_data["data"][depend_respond_data_key]
+			data5=data_list[depend_respond_data]
+			return data5
+
 
 		'''else:
 				data = response_data["data"][depend_respond_data]
@@ -60,18 +76,13 @@ class DependdentData:
 		#return [math.value for math in madle][0]
 
 if __name__ == '__main__':
-	order = {"code":200,
-		 "data":
-			 {"drawList":
-				  [{"addTime":1559289436000,"agentCode":"","amount":2.0,"id":69552}]},"message":"成功","version":"8.8.3"}
-	data1={"code":200,"data":[{"addTime":1560325986000,"agentCode":"","code":"None","id":22546}]}
+	order={"code":200,"data":{"feedback":{"id":700}}}
+	data1={"code":200,"data":[{"id":7728,"lottery":{"id":"30","a":"1"}}]}
 	data2=(data1["data"])
-	data=order["data"]["drawList"]
-	print(data)
-	for item in data:
-		print(item["id"])
-	for a in data2:
-		print(a["code"])
+	data_list = order["data"]["feedback"]
+	print(data_list["id"])
+	#for data in data_list:
+		#print (data["id"])
 #index = data.index('id') if ('id' in data) else -1
 #print(index)
 #res = "id"

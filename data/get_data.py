@@ -132,9 +132,14 @@ class GetData:
 			return data
 
 	def get_timestamp(self):
-		'''获取时间戳'''
+		'''获取毫秒级时间戳'''
 		return int(round(time.time() * 1000))
+
+	def get_time(self):
+		'''获取年月日'''
+		return time.strftime('%Y-%m-%d',time.localtime(time.time()))
+
 
 if __name__=='__main__':
 	opear=GetData()
-	print(opear.get_timestamp())
+	print(opear.get_time())
