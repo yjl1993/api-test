@@ -48,5 +48,10 @@
   "feedback/detail": {},
   "feedback/add": {"type":"1","details":"apitest","st":"az","mobile":"13692177143"},
   "aboutUs": {},
-  "logout": {}
+  "logout": {},
+  "getLotteryDetail":{"lotteryId":"39"},
+  "trade/payment": {"odds":"9.80","debug":"true","st":"az","lotteryId":"39","userId":"976022","playId":"1053","amount":"10.00","playDetailId":"705","addPeriodsStop":"0","rebate":"0.0","version":"9.4.1","num":"1","addPeriods":"1","bettingValue":"||9"},
+  "getNewLotterResult": {"st":"az","lotteryId":"39"},
+  "getAgGame1": {"cpId":"1"},
+  "getAgGame2": {"cpId":"2"}
 }

@@ -5,6 +5,7 @@ sys.path.append(r'C:\Users\Administrator\PycharmProjects\api-test')
 from util.operation_excel import OperationExcel
 from base.runmethod import RunMethod
 from data.get_data import GetData
+from get_target_value import GetTargetValue
 from jsonpath_rw import jsonpath,parse
 class DependdentData:
 	def __init__(self,case_id):
@@ -67,6 +68,11 @@ class DependdentData:
 			data5=data_list[depend_respond_data]
 			return data5
 
+		elif data_hierarchy == 6:
+			get_target_value = GetTargetValue()
+			data6=get_target_value.get_target_value(depend_respond_data,response_data,[])
+			return data6[0]
+
 
 		'''else:
 				data = response_data["data"][depend_respond_data]
@@ -81,6 +87,8 @@ if __name__ == '__main__':
 	data2=(data1["data"])
 	data_list = order["data"]["feedback"]
 	print(data_list["id"])
+	x=data1.get("data")
+	print(x)
 	#for data in data_list:
 		#print (data["id"])
 #index = data.index('id') if ('id' in data) else -1

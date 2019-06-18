@@ -1,6 +1,5 @@
 # coding:utf-8
 import sys
-
 sys.path.append(r"C:\Users\Administrator\PycharmProjects\api-test")
 from base.runmethod import RunMethod
 from data.get_data import GetData
