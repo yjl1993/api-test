@@ -36,14 +36,9 @@ class GetTargetValue:
 if __name__=="__main__":
     order = {"code": 200, "data": {"feedback": {"id": 700}}}
     data1 = {"code": 200, "data": [{"id": 7728, "lottery": {"id": "30", "a": "1"}}]}
-    cb={"code":200,"data":
-        {"lotteryDraw":
-             {"lottery":
-                  {"logo":{},
-                   "typeName":""},"lotteryNo":"201906171021"}}}
-
+    cb={'code': 200, 'data': '{"addTime":1560848700000,"beginTime":1560848640000,"closeTime":15699,"endTime":1560848689000,"lottery":{"addTime":1530943200000,"beginTime":0,"cid":8,"code":"js3d","color":"#000000","cycleType":1,"endTime":10,"id":39,"isHot":0,"isPrivate":1,"level":1,"logo":{"filename":"1219js3d.png","fileurl":"upload/logo/lottery/20181219/js3d.png","id":1232,"imgSize":"","lastTime":1545189750,"status":1,"type":0,"uploadSize":6000},"logoId":1232,"name":"极速3D","noType":1,"orderId":10,"pid":0,"remark":"1分钟一期","resultLotteryCode":"js3d","shortNoLength":4,"showType":3,"status":1,"type":11},"lotteryId":39,"lotteryNo":"201906181026","nextNo":"201906181027","nextTime":1560848760000,"queryHistory":false,"remainTime":15699,"result":"9,9,6","shortNextNo":"1027","shortNo":"1026","type":1}', 'message': '成功', 'version': '9.4.1'}
     get_target_value=GetTargetValue()
     a={"code":200,"data":{"lotteryList":[{"logo":{"filename":"1219bjpks.png","imgSize":"","resultLotteryCode":"bjpks","typeName":""}},
                                    {"logo":{"filename":"1219ffssc.png","imgSize":"","resultLotteryCode":"ffssc","typeName":""}}]}}
     data=(get_target_value.get_target_value("lotteryNo",cb,[]))
-    print(data[0])
+    print(data)

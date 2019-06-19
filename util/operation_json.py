@@ -12,7 +12,7 @@ class OperetionJson:
 	#读取json文件
 	def read_data(self):
 		'''	读取json文件'''
-		with open(self.file_path) as fp:
+		with open(self.file_path,"rb") as fp:
 			data = json.load(fp)
 			return data
 
