@@ -51,7 +51,7 @@
   "logout": {},
   "getLotteryDetail":{"lotteryId":"39"},
   "getNewLotteryNo": {"lotteryId":"39"},
-  "trade/payment": {"odds":"9.80","debug":"true","st":"az","lotteryId":"39","userId":"976022","playId":"1058","amount":"10.00","playDetailId":"690|691|692","addPeriodsStop":"0","rebate":"0.0","version":"9.4.2","num":"1","addPeriods":"1","bettingValue":"9|9|9"},
+  "trade/payment": {"st":"az","lotteryId":"39","userId":"976022","playId":"1058","playDetailId":"690|691|692","bettingValue":"9|9|9","amount":"10.00","addPeriodsStop":"0","rebate":"0.0","version":"9.5.5","num":"1","addPeriods":"1","odds":"9.80","debug":"true"},
   "getNewLotterResult": {"st":"az","lotteryId":"39"},
   "getAgGame1": {"cpId":"1"},
   "getAgGame2": {"cpId":"2"}

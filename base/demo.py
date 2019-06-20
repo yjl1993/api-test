@@ -5,7 +5,7 @@ import time
 from get_target_value import GetTargetValue
 class RunMain:
 
-	def send_get(self,url,data):
+	def send_get(self,url,data=None):
 		res = requests.get(url=url,data=data).json()
 		return res
 		
@@ -19,7 +19,7 @@ class RunMain:
 			res = self.send_get(url,data)
 		else:
 			res = self.send_post(url,data)
-		return res
+		return res#json.dumps(res,ensure_ascii=False)
 
 if __name__ == '__main__':
 	t = (time.time())

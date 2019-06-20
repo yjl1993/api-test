@@ -23,13 +23,20 @@ class GouCai:
         self.get_target_value=GetTargetValue()
 
 
-    def lotteryId(self,i):
-        '''返回彩票一级玩法编号'''
+    '''def lotteryId(self):
+        ''返回彩票一级玩法编号''
         url="http://172.16.10.221/common/getLotteryList?debug=true"
         return_data=self.run.run_main(url,"get")
-        data=return_data["data"]["lotteryList"][i]
+        #data=return_data["data"]["lotteryList"][i]
         #print(self.get_target_value.get_target_value("id",data,[])[0])
-        return self.get_target_value.get_target_value("id",data,[])[0]
+        #return self.get_target_value.get_target_value("id",data,[])[0]
+        #print(return_data["data"]["lotteryList"])
+        count_id=len(return_data["data"]["lotteryList"])
+        for a in range(count_id):
+            data = return_data["data"]["lotteryList"][a]
+            id=self.get_target_value.get_target_value("id",data,[])
+            return id
+            #print(data)'''
 
     def lotteryId_list(self):
         '''返回彩票一级玩法编号列表'''
@@ -39,39 +46,81 @@ class GouCai:
         count_id=len(return_data["data"]["lotteryList"])
         for a in range(count_id):
             data = return_data["data"]["lotteryList"][a]
-            lotteryId_list.append(self.get_target_value.get_target_value("id",data,[]))
-        print(lotteryId_list)
+            #print(data)
+            #print(data["id"])
+            lotteryId_list.append(data["id"])
         return lotteryId_list
 
-    def lotteryNo(self,i):
+    def lotteryNo(self):
         '''返回彩票期号'''
-        url="http://172.16.10.221/common/getNewLotteryNo?debug=true&lotteryId="+str(self.lotteryId(i))
-        return_data=self.run.run_main(url,"get")
-        data=return_data["data"]
-        m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data)#正则表达式查找字符串内容
-        if m:
-            #print(m.group(1))
-            return m.group(1)
+        count_id=len(self.lotteryId_list())
+        lotteryNo_list=[]
+        for a in range(count_id):
+            Id=self.lotteryId_list()[a]
+            url="http://172.16.10.221/common/getNewLotteryNo?debug=true&lotteryId="+str(Id)
+            return_data=self.run.run_main(url,"get")
+            data=return_data["data"]
+            m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data).group(1)#正则表达式查找字符串内容
+            a=lotteryNo_list.append(m)
+        print(lotteryNo_list)
+        return lotteryNo_list
 
-    def playId(self,i):
+    def playId(self):
         '''返回彩票二级玩法编号'''
-        url="http://172.16.10.221/common/getLotteryDetail?lotteryId="+str(self.lotteryId(i))
-        return_data = self.run.run_main(url, "get")
-        data=return_data["data"]
-
-
+        count_id=len(self.lotteryId_list())
+        for a in range(count_id):
+            lotteryNo_list = []
+            Id=self.lotteryId_list()[a]
+            url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)
+            return_data = self.run.run_main(url, "get")
+            data=return_data["data"]
+            count_wanfa = len(data)
+            for a in range(count_wanfa):
+                data1 = data[a]
+                playId=get_target_value.get_target_value("playId", data1, [])
+                lotteryNo_list.append(playId)
+            print(lotteryNo_list)
+            return lotteryNo_list
 
     def playDetailId(self):
         '''返回彩票玩法明细编号'''
+        count_id=len(self.lotteryId_list())
+        lotteryNo_list = []
+        for a in range(count_id):
+            Id=self.lotteryId_list()[a]
+            url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)+""
+            return_data = self.run.run_main(url, "get")
+            data=return_data["data"]
+            count_wanfa = len(data)
+            for b in range(count_wanfa):
+                data1 = data[b]
+                playDetailId=get_target_value.get_target_value("playDetailId", data1, [])
+                value=get_target_value.get_target_value("value", data1, [])
+                lotteryNo_list.append(playDetailId+value)
+                #lotteryNo_list.append(value)
+        for c in range(len(lotteryNo_list)):
+            print(c,lotteryNo_list[c])
+
+        #print(lotteryNo_list)
+        return lotteryNo_list
+
+    def goucai(self):
+        count_id=len(self.lotteryId_list())
+        lotteryNo_list = []
+        for a in range(count_id):
+            url="http://172.16.10.221/trade/payment/odds=9.80&st=az&userId=976022&amount=6.00&addPeriodsStop=0&rebate=0.0&version=9.5.5&num=3&addPeriods=1"
+            #lotteryId= 39 &playId=1053&timestamp=1561014634583&playDetailId=683%20704%20705&lotteryNo=201906200912&bettingValue=9%7C9%7C9
 
 
 if __name__ == '__main__':
     goucai=GouCai()
     get_target_value=GetTargetValue()
     #goucai.lotteryId_list()
-    #goucai.lotteryNo(0)
+    #goucai.lotteryNo()
+    #goucai.playId()
+    goucai.playDetailId()
 
-    data=[{"defaultt": 0, "erjiwanfa": [
+    data={"code":200,"data":[{"defaultt": 0, "erjiwanfa": [
         {"calType": "1", "cid": 8, "formula": "n1+n2+n3", "id": 1053, "isBase": 0, "isOnly": 0, "isShowOdds": 0,
          "itemMaxAmount": 999999, "maxRebate": 10, "name": "定位胆", "noSplit": 1, "noteMaxAmount": 999999,
          "noteMinAmount": 0.01, "odds": 9.8,
@@ -79,18 +128,14 @@ if __name__ == '__main__':
                          "winningCue": "所选号与相同位置上的开奖号一致，即为中奖。"}, "rules": "3-1|1", "sanjiwanfa": [
             {"id": 683, "name": "百位",
              "playValueList": [{"id": 8539, "orderId": 0, "playDetailId": 683, "type": 1, "value": "0"},
-
                                {"id": 8548, "orderId": 9, "playDetailId": 683, "type": 1, "value": "9"}],
              "sortName": "B", "valueType": 1}, {"id": 704, "name": "十位", "playValueList": [
                 {"id": 8770, "orderId": 0, "playDetailId": 704, "type": 1, "value": "0"},
-
-                {"id": 8779, "orderId": 9, "playDetailId": 704, "type": 1, "value": "9"}], "sortName": "S",
-                                                "valueType": 1}, {"id": 705, "name": "个位", "playValueList": [
+                {"id": 8779, "orderId": 9, "playDetailId": 704, "type": 1, "value": "9"}], "sortName": "S","valueType": 1},
+            {"id": 705, "name": "个位", "playValueList": [
                 {"id": 8780, "orderId": 0, "playDetailId": 705, "type": 1, "value": "0"},
-
-                {"id": 8789, "orderId": 9, "playDetailId": 705, "type": 1, "value": "9"}], "sortName": "G",
-                                                                  "valueType": 1}], "showMaxOdds": 1, "showNum": 6}],
-      "id": 1048, "name": "定位胆", "playDetail": 1},
+                {"id": 8789, "orderId": 9, "playDetailId": 705, "type": 1, "value": "9"}], "sortName": "G","valueType": 1}],
+         "showMaxOdds": 1, "showNum": 6}],"id": 1048, "name": "定位胆", "playDetail": 1},
 
 
           {"defaultt": 0, "erjiwanfa": [
@@ -114,7 +159,9 @@ if __name__ == '__main__':
                       {"id": 8789, "orderId": 9, "playDetailId": 706, "type": 1, "value": "9"}], "sortName": "G",
                                                                         "valueType": 1}], "showMaxOdds": 1,
                "showNum": 6}],
-           "id": 1048, "name": "定位胆", "playDetail": 1}]
+           "id": 1048, "name": "定位胆", "playDetail": 1}]}
 
-    data1=data[1]
-    print(get_target_value.get_target_value("playDetailId",data1,[]))
+    '''count_wanfa=len(data)
+    for a in range(count_wanfa):
+        data1=data[a]
+        print("id",get_target_value.get_target_value("playDetailId",data1,[]))'''
