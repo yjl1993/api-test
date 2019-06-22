@@ -49,76 +49,133 @@ class GouCai:
             #print(data)
             #print(data["id"])
             lotteryId_list.append(data["id"])
-        return lotteryId_list
+        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "w") as f:
+            for list_mem in lotteryId_list:
+                f.write(str(list_mem) + "\n")
+
+        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "r") as f:
+            for line in f.readlines():
+                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+                print(line)
+        #return lotteryId_list
 
     def lotteryNo(self):
         '''返回彩票期号'''
-        count_id=len(self.lotteryId_list())
         lotteryNo_list=[]
-        for a in range(count_id):
-            Id=self.lotteryId_list()[a]
-            url="http://172.16.10.221/common/getNewLotteryNo?debug=true&lotteryId="+str(Id)
-            return_data=self.run.run_main(url,"get")
-            data=return_data["data"]
-            m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data).group(1)#正则表达式查找字符串内容
-            a=lotteryNo_list.append(m)
-        print(lotteryNo_list)
-        return lotteryNo_list
+        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "r") as f:
+            for line in f.readlines():
+                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+                print(line)
+                url="http://172.16.10.221/common/getNewLotteryNo?debug=true&lotteryId="+str(line)
+                return_data=self.run.run_main(url,"get")
+                data=return_data["data"]
+                m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data).group(1)#正则表达式查找字符串内容
+                a=lotteryNo_list.append(m)
+
+        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryNo_list.txt", "w") as f:
+            for list_mem in lotteryNo_list:
+                f.write(str(list_mem) + "\n")
+        #print(lotteryNo_list)
+        #return lotteryNo_list
 
     def playId(self):
         '''返回彩票二级玩法编号'''
         count_id=len(self.lotteryId_list())
+        lotteryNo_list = []
         for a in range(count_id):
-            lotteryNo_list = []
             Id=self.lotteryId_list()[a]
             url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)
             return_data = self.run.run_main(url, "get")
             data=return_data["data"]
             count_wanfa = len(data)
-            for a in range(count_wanfa):
-                data1 = data[a]
+            for b in range(count_wanfa):
+                data1 = data[b]
                 playId=get_target_value.get_target_value("playId", data1, [])
                 lotteryNo_list.append(playId)
-            print(lotteryNo_list)
-            return lotteryNo_list
+        #print(lotteryNo_list)
+        return lotteryNo_list
+
+    def get_playid(self):
+        count_id = len(self.lotteryId_list())
+        playDetailId_list = []
+        value_list = []
+        shuju_lis = []
+        for a in range(count_id):  # 根据lotteryId的数量来执行
+            Id = self.lotteryId_list()[a]
+            url = "http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId=" + str(Id) + ""
+            LotteryDetail_data = self.run.run_main(url, "get")  # 彩票的所有信息数据
+            data = LotteryDetail_data["data"]
+            count_erjiwanfa = len(data)
+            for b in range(count_erjiwanfa):
+                data1 = data[b]
+                for c in data[b]["erjiwanfa"]:
+                    data1 = c["playExplain"]
+                    print("playid",get_target_value.get_target_value("playId", data1, []))
+
+
 
     def playDetailId(self):
         '''返回彩票玩法明细编号'''
         count_id=len(self.lotteryId_list())
-        lotteryNo_list = []
+        playDetailId_list = []
+        value_list=[]
         for a in range(count_id):
             Id=self.lotteryId_list()[a]
             url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)+""
             return_data = self.run.run_main(url, "get")
             data=return_data["data"]
-            count_wanfa = len(data)
-            for b in range(count_wanfa):
+            count_erjiwanfa = len(data)
+            for b in range(count_erjiwanfa):
                 data1 = data[b]
                 playDetailId=get_target_value.get_target_value("playDetailId", data1, [])
                 value=get_target_value.get_target_value("value", data1, [])
-                lotteryNo_list.append(playDetailId+value)
+                for c in range(len(playDetailId)):
+                    print(playDetailId[c])
+                    print(value[c])
+                #playDetailId_list.append(playDetailId)
+                #value_list.append(value)
                 #lotteryNo_list.append(value)
-        for c in range(len(lotteryNo_list)):
-            print(c,lotteryNo_list[c])
+        #for c in range(len(playDetailId_list)):
+            #print(c,playDetailId_list[c],value_list[c])
 
         #print(lotteryNo_list)
-        return lotteryNo_list
+        return value_list
 
     def goucai(self):
         count_id=len(self.lotteryId_list())
-        lotteryNo_list = []
-        for a in range(count_id):
-            url="http://172.16.10.221/trade/payment/odds=9.80&st=az&userId=976022&amount=6.00&addPeriodsStop=0&rebate=0.0&version=9.5.5&num=3&addPeriods=1"
-            #lotteryId= 39 &playId=1053&timestamp=1561014634583&playDetailId=683%20704%20705&lotteryNo=201906200912&bettingValue=9%7C9%7C9
+        playDetailId_list = []
+        value_list=[]
+        shuju_lis=[]
+        for a in range(count_id):#根据lotteryId的数量来执行
+            Id=self.lotteryId_list()[a]
+            url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)+""
+            LotteryDetail_data = self.run.run_main(url, "get")#彩票的所有信息数据
+            data=LotteryDetail_data["data"]
+            count_erjiwanfa = len(data)
+            for b in range(count_erjiwanfa):
+                data1 = data[b]
+                for c in data[b]["erjiwanfa"]:
+                    data1 = c["playExplain"]
+                    print(get_target_value.get_target_value("playId", data1, []))
+                playDetailId=get_target_value.get_target_value("playDetailId", data1, [])
+                value=get_target_value.get_target_value("value", data1, [])
+                playId = get_target_value.get_target_value("playId", data1, [])
+                #print(playId)
+                for c in range(len(playDetailId)):
+                    print(playDetailId[c])
+                    print(value[c])
+
 
 
 if __name__ == '__main__':
     goucai=GouCai()
     get_target_value=GetTargetValue()
     #goucai.lotteryId_list()
-    #goucai.lotteryNo()
+    goucai.lotteryNo()
     #goucai.playId()
-    goucai.playDetailId()
+    #goucai.playDetailId()
+    #goucai.goucai()
+    #goucai.get_playid()
 
     data={"code":200,"data":[{"defaultt": 0, "erjiwanfa": [
         {"calType": "1", "cid": 8, "formula": "n1+n2+n3", "id": 1053, "isBase": 0, "isOnly": 0, "isShowOdds": 0,
@@ -127,41 +184,45 @@ if __name__ == '__main__':
          "playExplain": {"example": "选号：十位 3，开奖号：* 3 *。", "id": 343, "playCue": "任选1个位置并选1个号码组成一注。", "playId": 1053,
                          "winningCue": "所选号与相同位置上的开奖号一致，即为中奖。"}, "rules": "3-1|1", "sanjiwanfa": [
             {"id": 683, "name": "百位",
-             "playValueList": [{"id": 8539, "orderId": 0, "playDetailId": 683, "type": 1, "value": "0"},
-                               {"id": 8548, "orderId": 9, "playDetailId": 683, "type": 1, "value": "9"}],
+             "playValueList": [{"id": 8539, "orderId": 0, "playDetailId": 683, "type": 1, "value": "0"}],
              "sortName": "B", "valueType": 1}, {"id": 704, "name": "十位", "playValueList": [
-                {"id": 8770, "orderId": 0, "playDetailId": 704, "type": 1, "value": "0"},
                 {"id": 8779, "orderId": 9, "playDetailId": 704, "type": 1, "value": "9"}], "sortName": "S","valueType": 1},
             {"id": 705, "name": "个位", "playValueList": [
-                {"id": 8780, "orderId": 0, "playDetailId": 705, "type": 1, "value": "0"},
                 {"id": 8789, "orderId": 9, "playDetailId": 705, "type": 1, "value": "9"}], "sortName": "G","valueType": 1}],
          "showMaxOdds": 1, "showNum": 6}],"id": 1048, "name": "定位胆", "playDetail": 1},
-
 
           {"defaultt": 0, "erjiwanfa": [
               {"calType": "1", "cid": 8, "formula": "n1+n2+n3", "id": 1054, "isBase": 0, "isOnly": 0, "isShowOdds": 0,
                "itemMaxAmount": 999999, "maxRebate": 10, "name": "定位胆", "noSplit": 1, "noteMaxAmount": 999999,
                "noteMinAmount": 0.01, "odds": 9.8,
                "playExplain": {"example": "选号：十位 3，开奖号：* 3 *。", "id": 343, "playCue": "任选1个位置并选1个号码组成一注。",
-                               "playId": 1053,
-                               "winningCue": "所选号与相同位置上的开奖号一致，即为中奖。"}, "rules": "3-1|1", "sanjiwanfa": [
-                  {"id": 683, "name": "百位",
-                   "playValueList": [{"id": 8539, "orderId": 0, "playDetailId": 684, "type": 1, "value": "0"},
-
-                                     {"id": 8548, "orderId": 9, "playDetailId": 684, "type": 1, "value": "9"}],
+                               "playId": 1054,
+                               "winningCue": "所选号与相同位置上的开奖号一致，即为中奖。"}, "rules": "3-1|1", "sanjiwanfa": [{"id": 683, "name": "百位",
+                   "playValueList": [{"id": 8539, "orderId": 0, "playDetailId": 684, "type": 1, "value": "0"}],
                    "sortName": "B", "valueType": 1}, {"id": 704, "name": "十位", "playValueList": [
-                      {"id": 8770, "orderId": 0, "playDetailId": 705, "type": 1, "value": "0"},
-
-                      {"id": 8779, "orderId": 9, "playDetailId": 705, "type": 1, "value": "9"}], "sortName": "S",
-                                                      "valueType": 1}, {"id": 705, "name": "个位", "playValueList": [
-                      {"id": 8780, "orderId": 0, "playDetailId": 706, "type": 1, "value": "0"},
-
+                      {"id": 8779, "orderId": 9, "playDetailId": 705, "type": 1, "value": "9"}], "sortName": "S","valueType": 1}, {"id": 705, "name": "个位", "playValueList": [
                       {"id": 8789, "orderId": 9, "playDetailId": 706, "type": 1, "value": "9"}], "sortName": "G",
-                                                                        "valueType": 1}], "showMaxOdds": 1,
-               "showNum": 6}],
-           "id": 1048, "name": "定位胆", "playDetail": 1}]}
+                                                                        "valueType": 1}], "showMaxOdds": 1,"showNum": 6}],
+           "id": 1048, "name": "定位胆", "playDetail": 2}]}
 
-    '''count_wanfa=len(data)
+    count_wanfa=len(data["data"])
+    #print(data["data"][0]["erjiwanfa"])
     for a in range(count_wanfa):
-        data1=data[a]
-        print("id",get_target_value.get_target_value("playDetailId",data1,[]))'''
+        for b in data["data"][a]["erjiwanfa"]:
+            B=b["playExplain"]
+            #print(get_target_value.get_target_value("playId",B,[]))
+
+        #print(data1)
+
+        #sanjiwanfa=data1['erjiwanfa'][14]
+        #print(sanjiwanfa)
+        #sanjiwanfa=get_target_value.get_target_value("sanjiwanfa",data1,[])
+       # print(get_target_value.get_target_value("id",sanjiwanfa,[]))
+    #list = [[1,2,66,58,64],[12],[22],[13],[14],[45],[6],]
+    #with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "w") as f:
+        #for list_mem in list:
+          #  f.write(str(list_mem)+"\n")
+   # with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "r") as f:
+       # for line in f.readlines():
+          #  line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+           # print(line)
