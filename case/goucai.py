@@ -1,6 +1,6 @@
 # coding:utf-8
 import sys,re
-sys.path.append(r"C:\Users\Administrator\PycharmProjects\api-test")
+sys.path.append(r"..\PycharmProjects\api-test")
 from base.runmethod import RunMethod
 from data.get_data import GetData
 from util.common_util import CommonUtil
@@ -49,103 +49,77 @@ class GouCai:
             #print(data)
             #print(data["id"])
             lotteryId_list.append(data["id"])
-        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "w") as f:
+        with open("..\dataconfig\lotteryId.txt", "w") as f:
             for list_mem in lotteryId_list:
                 f.write(str(list_mem) + "\n")
-
-        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "r") as f:
-            for line in f.readlines():
-                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
-                print(line)
-        #return lotteryId_list
 
     def lotteryNo(self):
         '''返回彩票期号'''
         lotteryNo_list=[]
-        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryId.txt", "r") as f:
+        with open("..\dataconfig\lotteryId.txt", "r") as f:
             for line in f.readlines():
                 line = line.strip('\n')  # 去掉列表中每一个元素的换行符
-                print(line)
                 url="http://172.16.10.221/common/getNewLotteryNo?debug=true&lotteryId="+str(line)
                 return_data=self.run.run_main(url,"get")
                 data=return_data["data"]
                 m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data).group(1)#正则表达式查找字符串内容
                 a=lotteryNo_list.append(m)
-
-        with open(r"C:\Users\Administrator\PycharmProjects\api-test\dataconfig\lotteryNo_list.txt", "w") as f:
+        with open("..\dataconfig\lotteryNo_list.txt", "w") as f:
             for list_mem in lotteryNo_list:
                 f.write(str(list_mem) + "\n")
         #print(lotteryNo_list)
         #return lotteryNo_list
 
-    def playId(self):
+    def get_playId(self):
         '''返回彩票二级玩法编号'''
-        count_id=len(self.lotteryId_list())
-        lotteryNo_list = []
-        for a in range(count_id):
-            Id=self.lotteryId_list()[a]
-            url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)
-            return_data = self.run.run_main(url, "get")
-            data=return_data["data"]
-            count_wanfa = len(data)
-            for b in range(count_wanfa):
-                data1 = data[b]
-                playId=get_target_value.get_target_value("playId", data1, [])
-                lotteryNo_list.append(playId)
+        playId_list = []
+
+        with open("..\dataconfig\lotteryId.txt", "r") as f:
+            for line in f.readlines():
+                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+                url = "http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId=" + str(line) + ""
+                LotteryDetail_data = self.run.run_main(url, "get")  # 彩票的所有信息数据
+                data = LotteryDetail_data["data"]
+                count_erjiwanfa = len(data)
+                for b in range(count_erjiwanfa):
+                    data1 = data[b]
+                    list = []
+                    for c in data1["erjiwanfa"]:
+                        data2 = c["playExplain"]
+                        list.append(get_target_value.get_target_value("playId", data2, []))
+                        print(list)
+                        #playId_list.append(get_target_value.get_target_value("playId", data2, []))
+                #print(playId_list)
+        with open("..\dataconfig\playId_list.txt", "w") as f:
+            for list_mem in playId_list:
+                f.write(str(list_mem) + "\n")
         #print(lotteryNo_list)
-        return lotteryNo_list
-
-    def get_playid(self):
-        count_id = len(self.lotteryId_list())
-        playDetailId_list = []
-        value_list = []
-        shuju_lis = []
-        for a in range(count_id):  # 根据lotteryId的数量来执行
-            Id = self.lotteryId_list()[a]
-            url = "http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId=" + str(Id) + ""
-            LotteryDetail_data = self.run.run_main(url, "get")  # 彩票的所有信息数据
-            data = LotteryDetail_data["data"]
-            count_erjiwanfa = len(data)
-            for b in range(count_erjiwanfa):
-                data1 = data[b]
-                for c in data[b]["erjiwanfa"]:
-                    data1 = c["playExplain"]
-                    print("playid",get_target_value.get_target_value("playId", data1, []))
-
-
+        #print(playDetailId_list)
 
     def playDetailId(self):
         '''返回彩票玩法明细编号'''
-        count_id=len(self.lotteryId_list())
         playDetailId_list = []
-        value_list=[]
-        for a in range(count_id):
-            Id=self.lotteryId_list()[a]
-            url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)+""
-            return_data = self.run.run_main(url, "get")
-            data=return_data["data"]
-            count_erjiwanfa = len(data)
-            for b in range(count_erjiwanfa):
-                data1 = data[b]
-                playDetailId=get_target_value.get_target_value("playDetailId", data1, [])
-                value=get_target_value.get_target_value("value", data1, [])
-                for c in range(len(playDetailId)):
-                    print(playDetailId[c])
-                    print(value[c])
-                #playDetailId_list.append(playDetailId)
-                #value_list.append(value)
-                #lotteryNo_list.append(value)
-        #for c in range(len(playDetailId_list)):
-            #print(c,playDetailId_list[c],value_list[c])
-
-        #print(lotteryNo_list)
-        return value_list
+        with open("..\dataconfig\lotteryId.txt", "r") as f:
+            for line in f.readlines():
+                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+                url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(line)+""
+                return_data = self.run.run_main(url, "get")
+                data=return_data["data"]
+                count_erjiwanfa = len(data)
+                for b in range(count_erjiwanfa):
+                    data1 = data[b]
+                    playDetailId=get_target_value.get_target_value("playDetailId", data1, [])
+                    value=get_target_value.get_target_value("value", data1, [])
+                    for c in range(len(playDetailId)):
+                        #print(playDetailId[c])
+                        playDetailId_value=str(playDetailId[c])+":"+value[c]
+                        playDetailId_list.append(playDetailId_value)
+        with open("..\dataconfig\playDetailId_list.txt", "w") as f:
+            for list_mem in playDetailId_list:
+                f.write(str(list_mem) + "\n")
 
     def goucai(self):
         count_id=len(self.lotteryId_list())
-        playDetailId_list = []
-        value_list=[]
-        shuju_lis=[]
         for a in range(count_id):#根据lotteryId的数量来执行
             Id=self.lotteryId_list()[a]
             url="http://172.16.10.221/common/getLotteryDetail?debug=true&lotteryId="+str(Id)+""
@@ -165,17 +139,29 @@ class GouCai:
                     print(playDetailId[c])
                     print(value[c])
 
+    def login_api(self):
+        '''登录接口'''
+        with open("..\dataconfig\login_user.txt", "r") as f:
+            for line in f.readlines():
+                line = line.strip('\n')  # 去掉列表中每一个元素的换行符
+                url="http://172.16.10.221/common/login?debug=true&password=123456&wssid=138%3A%5B172-16-10-223%5D&account="+str(line)
+                return_data=self.run.run_main(url,"get")
+                print(return_data)
+                print("lo")
+
 
 
 if __name__ == '__main__':
     goucai=GouCai()
     get_target_value=GetTargetValue()
     #goucai.lotteryId_list()
-    goucai.lotteryNo()
-    #goucai.playId()
+    #goucai.lotteryNo()
+    #goucai.get_playId()
     #goucai.playDetailId()
     #goucai.goucai()
-    #goucai.get_playid()
+    goucai.login_api()
+
+
 
     data={"code":200,"data":[{"defaultt": 0, "erjiwanfa": [
         {"calType": "1", "cid": 8, "formula": "n1+n2+n3", "id": 1053, "isBase": 0, "isOnly": 0, "isShowOdds": 0,

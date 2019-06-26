@@ -1,5 +1,5 @@
 # coding:utf-8
-import sys
+import sys,threading
 sys.path.append(r"C:\Users\Administrator\PycharmProjects\api-test")
 from base.runmethod import RunMethod
 from data.get_data import GetData
@@ -85,9 +85,9 @@ class RunTest:
 
 if __name__ == '__main__':
     run = RunTest()
-    run.go_on_run()
-
-    '''            for b in range(count_erjiwanfa):
-                for c in data[b]["erjiwanfa"]:
-                    data1 = c["playExplain"]
-                    print(get_target_value.get_target_value("playId",data1,[]))'''
+    #run.go_on_run()
+    threads=[]
+    for line in range(3):
+        print(line)
+        t= threading.Thread(target=run.go_on_run())
+        t.start()

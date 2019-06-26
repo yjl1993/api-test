@@ -1,7 +1,7 @@
 #coding:utf-8
-import sys
+import sys,re
 import json
-sys.path.append(r'C:\Users\Administrator\PycharmProjects\api-test')
+sys.path.append(r'..\PycharmProjects\api-test')
 from util.operation_excel import OperationExcel
 from base.runmethod import RunMethod
 from data.get_data import GetData
@@ -72,6 +72,11 @@ class DependdentData:
 			get_target_value = GetTargetValue()
 			data6=get_target_value.get_target_value(depend_respond_data,response_data,[])
 			return data6[0]
+
+		elif data_hierarchy == "正则":
+			data = response_data["data"]
+			m = re.search(r'(?:[, ])"lotteryNo":("\d+")', data).group(1)
+			return m
 
 
 		'''else:

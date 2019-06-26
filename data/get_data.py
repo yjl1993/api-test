@@ -7,12 +7,12 @@ class GetData:
 	def __init__(self):
 		self.opera_excel = OperationExcel()
 
-	#去获取excel行数,就是我们的case个数	
+
 	def get_case_lines(self):
 		'''	去获取excel行数,就是我们的case个数	'''
 		return self.opera_excel.get_lines()
 
-	#获取是否执行
+
 	def get_is_run(self,row):
 		'''获取是否执行'''
 		flag = None
@@ -24,7 +24,7 @@ class GetData:
 			flag = False
 		return flag
 
-	#是否携带header
+
 	def is_header(self,row):
 		'''是否携带header'''
 		col = int(data_config.get_header())
@@ -34,21 +34,21 @@ class GetData:
 		else:
 			return None
 
-	#获取请求方式
+
 	def get_request_method(self,row):
 		'''获取请求方式'''
 		col = int(data_config.get_run_way())
 		request_method = self.opera_excel.get_cell_value(row,col)
 		return request_method
 
-	#获取url
+
 	def get_request_url(self,row):
 		'''获取url'''
 		col = int(data_config.get_url())
 		url = self.opera_excel.get_cell_value(row,col)
 		return url
 
-	#获取请求数据
+
 	def get_request_data(self,row):
 		'''获取请求数据字段'''
 		col = int(data_config.get_data())
@@ -57,14 +57,14 @@ class GetData:
 			return None
 		return data
 
-	#通过获取关键字拿到data数据
+
 	def get_data_for_json(self,row):
 		'''通过获取关键字拿到data数据'''
 		opera_json = OperetionJson()
 		request_data = opera_json.get_data(self.get_request_data(row))
 		return request_data
 
-	#获取预期结果
+
 	def get_expcet_data(self,row):
 		'''获取预期结果'''
 		col = int(data_config.get_expect())
@@ -73,7 +73,6 @@ class GetData:
 			return None
 		return expect
 
-	#通过sql获取预期结果
 	def get_expcet_data_for_mysql(self,row):
 		'''通过sql获取预期结果'''
 		op_mysql = OperationMysql()
@@ -86,7 +85,6 @@ class GetData:
 		col = int(data_config.get_result())
 		self.opera_excel.write_value(row,col,value)
 
-	#判断是否有case依赖
 	def is_depend(self,row):
 		'''判断是否有case依赖'''
 		col = int(data_config.get_case_depend())
@@ -100,7 +98,6 @@ class GetData:
 		'''获取依赖返回数据的层级'''
 		col=int(data_config.get_data_hierarchy())
 		data_hierarchy=self.opera_excel.get_cell_value(row,col)
-
 		return data_hierarchy
 
 	def get_depend_data_key(self,row):
@@ -121,7 +118,6 @@ class GetData:
 		else:
 			return data
 
-	#获取数据依赖字段
 	def get_depend_respond_data(self,row):
 		'''获取依赖的返回数据'''
 		col = int(data_config.depend_respond_data())
@@ -142,4 +138,4 @@ class GetData:
 
 if __name__=='__main__':
 	opear=GetData()
-	print(opear.get_time())
+	print(opear.get_timestamp())
