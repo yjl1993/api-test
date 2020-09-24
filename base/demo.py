@@ -5,8 +5,8 @@ import time
 from get_target_value import GetTargetValue
 class RunMain:
 
-	def send_get(self,url,data=None):
-		res = requests.get(url=url,data=data).json()
+	def send_get(self, url, data=None):
+		res = requests.get(url=url, data=data).json()
 		return res
 		
 	def send_post(self,url,data):
