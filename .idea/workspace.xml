@@ -19,16 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9af3a738-90c5-4514-b303-7c660adffa67" name="Default Changelist" comment="将数据保存在tex，然后去读取">
-      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/HTMLTestRunner_PY3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/p22naf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/p22naf.iml" afterDir="false" />
+    <list default="true" id="9af3a738-90c5-4514-b303-7c660adffa67" name="Default Changelist" comment="更换为pipenv虚拟环境">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/262a4780-2545-4b8b-b74e-9ec8049df02e/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/mock_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/mock_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/runmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/runmethod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/test_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/test_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/goucai.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/goucai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/pil_goucai.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/pil_goucai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/dependent_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dependent_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/get_target_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/get_target_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataconfig/case1.xls" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case1.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/run_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/run_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/common_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/connect_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/connect_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/operation_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operation_excel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/operation_header.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operation_header.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/operation_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operation_json.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,14 +131,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/base" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -336,7 +347,10 @@
       <workItem from="1561425775472" duration="6967000" />
       <workItem from="1561444081131" duration="5275000" />
       <workItem from="1561516591549" duration="676000" />
-      <workItem from="1600935218686" duration="3191000" />
+      <workItem from="1600935218686" duration="5464000" />
+      <workItem from="1602296393200" duration="164000" />
+      <workItem from="1602321299179" duration="192000" />
+      <workItem from="1605065585869" duration="411000" />
     </task>
     <task id="LOCAL-00001" summary="第一次上传api">
       <created>1559096553085</created>
@@ -387,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561175100513</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更换为pipenv虚拟环境">
+      <created>1600938953927</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600938953927</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -441,29 +462,30 @@
     <MESSAGE value="新增层级key，新增用例" />
     <MESSAGE value="Default Changelist" />
     <MESSAGE value="将数据保存在tex，然后去读取" />
-    <option name="LAST_COMMIT_MESSAGE" value="将数据保存在tex，然后去读取" />
+    <MESSAGE value="更换为pipenv虚拟环境" />
+    <option name="LAST_COMMIT_MESSAGE" value="更换为pipenv虚拟环境" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1308" height="274" key="GridCell.Tab.0.bottom" timestamp="1600938763368">
+    <state width="1308" height="274" key="GridCell.Tab.0.bottom" timestamp="1601030294705">
       <screen x="1440" y="-88" width="1920" height="1057" />
     </state>
-    <state width="1308" height="274" key="GridCell.Tab.0.bottom/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600938763368" />
-    <state width="1308" height="274" key="GridCell.Tab.0.center" timestamp="1600938763366">
+    <state width="1308" height="274" key="GridCell.Tab.0.bottom/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1601030294705" />
+    <state width="1308" height="274" key="GridCell.Tab.0.center" timestamp="1601030294704">
       <screen x="1440" y="-88" width="1920" height="1057" />
     </state>
-    <state width="1308" height="274" key="GridCell.Tab.0.center/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600938763366" />
-    <state width="1308" height="274" key="GridCell.Tab.0.left" timestamp="1600938763365">
+    <state width="1308" height="274" key="GridCell.Tab.0.center/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1601030294704" />
+    <state width="1308" height="274" key="GridCell.Tab.0.left" timestamp="1601030294703">
       <screen x="1440" y="-88" width="1920" height="1057" />
     </state>
-    <state width="1308" height="274" key="GridCell.Tab.0.left/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600938763365" />
-    <state width="1308" height="274" key="GridCell.Tab.0.right" timestamp="1600938763368">
+    <state width="1308" height="274" key="GridCell.Tab.0.left/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1601030294703" />
+    <state width="1308" height="274" key="GridCell.Tab.0.right" timestamp="1601030294704">
       <screen x="1440" y="-88" width="1920" height="1057" />
     </state>
-    <state width="1308" height="274" key="GridCell.Tab.0.right/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600938763368" />
-    <state x="1606" y="149" key="SettingsEditor" timestamp="1600936793314">
+    <state width="1308" height="274" key="GridCell.Tab.0.right/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1601030294704" />
+    <state x="1606" y="149" key="SettingsEditor" timestamp="1600940527737">
       <screen x="1440" y="-88" width="1920" height="1057" />
     </state>
-    <state x="1606" y="149" key="SettingsEditor/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600936793314" />
+    <state x="1606" y="149" key="SettingsEditor/46.23.1394.877/1440.-88.1920.1057@1440.-88.1920.1057" timestamp="1600940527737" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api_test$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1560498072321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />

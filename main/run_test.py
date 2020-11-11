@@ -1,6 +1,7 @@
 # coding:utf-8
 import sys
 import threading
+
 sys.path.append(r"C:\Users\Administrator\PycharmProjects\api-test")
 from base.runmethod import RunMethod
 from data.get_data import GetData
@@ -32,15 +33,15 @@ class RunTest:
             if is_run:
                 url_dizhi = self.data.get_request_url(i)
                 url_yuming = "http://172.16.10.211/"
-                url=self.data.get_request_url(i)
-                #url = url_dizhi + "&timestamp=" + str(self.data.get_timestamp())
+                url = self.data.get_request_url(i)
+                # url = url_dizhi + "&timestamp=" + str(self.data.get_timestamp())
                 method = self.data.get_request_method(i)
                 request_data = self.data.get_data_for_json(i)
-                request_data['userId']="976022"
-                request_data["timestamp"]=self.data.get_timestamp()
-                request_data["debug"]="true"
-                request_data["startTime"]="2017-01-01"
-                request_data["endTime"]=self.data.get_time()
+                request_data['userId'] = "976022"
+                request_data["timestamp"] = self.data.get_timestamp()
+                request_data["debug"] = "true"
+                request_data["startTime"] = "2017-01-01"
+                request_data["endTime"] = self.data.get_time()
                 # expect = self.data.get_expcet_data_for_mysql(i)
                 expect = self.data.get_expcet_data(i)
                 header = self.data.is_header(i)
@@ -80,15 +81,16 @@ class RunTest:
         print("成功:", len(pass_count), "失败:", len(fail_count))
     # self.send_mai.send_main(pass_count,fail_count)
 
+
 # 将执行判断封装
 # def get_cookie_run(self,header):
 
 
 if __name__ == '__main__':
     run = RunTest()
-    #run.go_on_run()
-    threads=[]
+    # run.go_on_run()
+    threads = []
     for line in range(3):
         print(line)
-        t= threading.Thread(target=run.go_on_run())
+        t = threading.Thread(target=run.go_on_run())
         t.start()
