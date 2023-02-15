@@ -9,8 +9,8 @@ global password
 
 class SendEmail:
     email_host = "smtp.qq.com"
-    send_user = "2721739882@qq.com"
-    password = "qyujia1092374542"
+    send_user = "@qq.com"
+    password = ""
 
     def send_mail(self, user_list, sub, content):
         user = "Mushishi" + "<" + send_user + ">"
